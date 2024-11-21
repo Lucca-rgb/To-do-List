@@ -71,7 +71,7 @@ To run the To-do List locally:
 
 If you have any questions or need more information, feel free to contact me:
 
-- **Email**: Lucca.torrez1980@Outlook.com
+- **Email**: Lucca.torrez1980@outlook.com
 - **GitHub**: [https://github.com/Lucca-rgb](https://github.com/Lucca-rgb)
 
 ---
@@ -148,5 +148,5 @@ Para rodar a To-do List localmente:
 
 Se você tiver alguma dúvida ou precisar de mais informações, entre em contato:
 
-- **Email**: Lucca.torrez1980@Outlook.com
+- **Email**: Lucca.torrez1980@outlook.com
 - **GitHub**: [https://github.com/Lucca-rgb](https://github.com/Lucca-rgb)
