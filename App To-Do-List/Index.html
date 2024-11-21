@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- Mude o valor para "en" para definir o idioma inicial como inglês -->
+<html lang="en"> <!-- Set the language of the document to English initially -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8"> <!-- Define character encoding as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Make the page responsive -->
+    <title>To-Do List</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external stylesheet -->
 </head>
 <body>
 
-    <!-- Cabeçalho com imagem -->
+    <!-- Header section with an image (or text in this case) -->
     <div class="header">
-        <h1 id="header-title">My plans</h1> <!-- Alterado para 'header-title' -->
+        <h1 id="header-title">My plans</h1> <!-- Title of the header, changed the ID to 'header-title' for potential styling or manipulation -->
+        
+        <!-- Dropdown menu to select the language -->
         <select id="language-dropdown" class="language-dropdown">
-            <option value="en" selected>English</option>
-            <option value="pt">Português</option>
-            <option value="es">Español</option>
+            <option value="en" selected>English</option> <!-- English option, selected by default -->
+            <option value="pt">Português</option> <!-- Portuguese option -->
+            <option value="es">Español</option> <!-- Spanish option -->
         </select>
     </div>
 
-    <!-- Título -->
-    <h1 id="todo-title">What do we have for today?</h1>
+    <!-- Main title for the to-do list section -->
+    <h1 id="todo-title">What do we have for today?</h1> <!-- Title asking for today's tasks -->
 
-    <!-- Botão de submissão -->
-    <button id="submit-button">Go to my tasks</button>
+    <!-- Button to submit or navigate to tasks -->
+    <button id="submit-button">Go to my tasks</button> <!-- Button that allows the user to proceed to their tasks -->
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Link to the external JavaScript file that handles interactivity -->
 
 </body>
 </html>
