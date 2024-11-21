@@ -1,10 +1,10 @@
-// Selecionando os elementos
+// Selecting elements
 const submitButton = document.getElementById('submit-button');
-const pageTitle = document.getElementById('header-title'); // Título do cabeçalho (alterado para 'header-title')
-const todoTitle = document.getElementById('todo-title'); // Título específico para o todo-list
-const languageDropdown = document.getElementById('language-dropdown'); // Dropdown para seleção do idioma
+const pageTitle = document.getElementById('header-title'); // Header title (changed to 'header-title')
+const todoTitle = document.getElementById('todo-title'); // Specific title for the to-do list
+const languageDropdown = document.getElementById('language-dropdown'); // Dropdown for language selection
 
-// Objeto contendo as traduções
+// Object containing translations
 const translations = {
     en: {
         'page-title': 'My plans',
@@ -23,39 +23,39 @@ const translations = {
     },
 };
 
-// Função para atualizar o título e o texto do botão
+// Function to update the title and button text
 function updateText(language) {
-    // Traduzindo o título da página (page-title), o título específico (todo-title) e o texto do botão
-    const pageTitleText = translations[language]['page-title']; // Traduz o 'page-title'
-    const todoTitleText = translations[language]['todo-title']; // Traduz o 'todo-title'
-    const buttonText = translations[language]['Go to my tasks']; // Traduz o texto do botão
+    // Translating the page title (page-title), specific title (todo-title), and button text
+    const pageTitleText = translations[language]['page-title']; // Translates 'page-title'
+    const todoTitleText = translations[language]['todo-title']; // Translates 'todo-title'
+    const buttonText = translations[language]['Go to my tasks']; // Translates button text
 
-    // Atualizando o conteúdo
-    pageTitle.innerText = pageTitleText;  // Atualiza o título da página
-    todoTitle.innerText = todoTitleText;  // Atualiza o título 'todo-title'
-    submitButton.innerText = buttonText;  // Atualiza o texto do botão
+    // Updating the content
+    pageTitle.innerText = pageTitleText;  // Updates the page title
+    todoTitle.innerText = todoTitleText;  // Updates the 'todo-title'
+    submitButton.innerText = buttonText;  // Updates the button text
 }
 
-// Função para alterar o idioma com base no dropdown
+// Function to change the language based on the dropdown selection
 function handleLanguageChange() {
-    const selectedLanguage = languageDropdown.value; // Obtém o idioma selecionado
-    document.documentElement.lang = selectedLanguage; // Atualiza o atributo lang da página
-    updateText(selectedLanguage); // Atualiza o conteúdo com o idioma selecionado
+    const selectedLanguage = languageDropdown.value; // Gets the selected language
+    document.documentElement.lang = selectedLanguage; // Updates the page's lang attribute
+    updateText(selectedLanguage); // Updates the content with the selected language
 }
 
-// Atualiza o texto de acordo com o idioma selecionado ao carregar a página
+// Updates text according to the selected language when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    // Define o idioma como 'en' (inglês) por padrão se não houver um idioma definido
-    const language = document.documentElement.lang || 'en'; // Se não tiver idioma, usa 'en'
-    languageDropdown.value = language; // Define o valor do dropdown como o idioma
-    updateText(language); // Atualiza os textos de acordo com o idioma
+    // Set default language to 'en' (English) if no language is defined
+    const language = document.documentElement.lang || 'en'; // If no language, defaults to 'en'
+    languageDropdown.value = language; // Sets the dropdown value to the selected language
+    updateText(language); // Updates text according to the language
 });
 
-// Escuta as mudanças no dropdown de idiomas
+// Listens for changes in the language dropdown
 languageDropdown.addEventListener('change', handleLanguageChange);
 
-// Funcionalidade do botão de redirecionamento
+// Redirect button functionality
 submitButton.addEventListener('click', () => {
-    // Redireciona para a página tasks.html ao clicar no botão
+    // Redirects to the tasks.html page when the button is clicked
     window.location.href = 'tasks.html';
 });
