@@ -1,4 +1,6 @@
-# English Version
+# English Version 
+
+## [#Versão em Português Aqui](#versão-em-português)
 
 ## To-do-List 📝
 
@@ -73,11 +75,9 @@ If you have any questions or need more information, feel free to contact me:
 - **GitHub**: [https://github.com/Lucca-rgb](https://github.com/Lucca-rgb)
 
 ---
-
-[#Versão em Português](#versão-em-português)
-
----
 # Versão em Português
+
+## [#English Version Here](#english-version)
 
 ## To-do-List 📝
 
@@ -150,5 +150,3 @@ Se você tiver alguma dúvida ou precisar de mais informações, entre em contat
 
 - **Email**: Lucca.torrez1980@Outlook.com
 - **GitHub**: [https://github.com/Lucca-rgb](https://github.com/Lucca-rgb)
-
- [#English Version](#english-version)
