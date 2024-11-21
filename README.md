@@ -1,4 +1,4 @@
-## #English Version
+## #[Versão em Português](#)
 
 ## To-do-List 📝
 
@@ -74,7 +74,7 @@ If you have any questions or need more information, feel free to contact me:
 
 ---
 
-## #[Versão em Português](#) 🌍
+## #English Version 🌍
 
 # To-do-List 📝
 
