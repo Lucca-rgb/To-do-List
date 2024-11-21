@@ -1,57 +1,79 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt"> <!-- Set the language of the document to Portuguese -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tasks</title>
-    <link rel="stylesheet" href="styles1.css">
+    <meta charset="UTF-8"> <!-- Define the character encoding as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensure proper scaling on mobile devices -->
+    <title>My Tasks</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="styles1.css"> <!-- Link to the external CSS file for styling -->
 </head>
 <body>
 
-    <!-- Cabeçalho com título -->
+    <!-- Header with title -->
     <div class="header">
-        <button class="back-button" id="back-button" onclick="window.location.href = 'index.html';" data-translate="Voltar">Voltar</button> <!-- Botão de Voltar -->
-        <h1 id="page-title" data-translate="My Tasks">My Tasks</h1> <!-- Título da página -->
+        <button class="back-button" id="back-button" onclick="window.location.href = 'index.html';" data-translate="Voltar">Voltar</button> <!-- Back button -->
+        <h1 id="page-title" data-translate="My Tasks">My Tasks</h1> <!-- Page title -->
     </div>
 
-    <!-- Área de post-its -->
+    <!-- Post-it area -->
     <div class="postit-container">
-        <!-- Exemplo de post-its (estes podem ser criados dinamicamente) -->
+        <!-- Example post-its (these can be created dynamically) -->
         <div class="postit" id="postit-1">
-            <button class="delete-button" data-translate="Delete">Excluir</button> <!-- Botão de Excluir -->
+            <button class="delete-button" data-translate="Delete">Excluir</button> <!-- Delete button -->
             <input type="text" class="postit-title" id="postit-title-1" placeholder="Título do Post-it" value="Task 1" data-translate="Task">
+            <!-- Input field for the post-it title -->
             <textarea class="postit-content" id="postit-content-1" placeholder="Escreva sua nota aqui..." data-translate="Content"></textarea>
+            <!-- Textarea for the post-it content -->
             <input type="url" class="postit-link" id="postit-link-1" placeholder="Adicionar link (opcional)" data-translate="Link">
+            <!-- Input field for an optional link -->
             <input type="file" class="postit-file" id="postit-file-1" data-translate="File">
+            <!-- File input field -->
             <button class="save-button" id="save-button-1" data-translate="Save">Salvar</button>
+            <!-- Save button -->
         </div>
+
+        <!-- Repeat for other post-its -->
         <div class="postit" id="postit-2">
-            <button class="delete-button" data-translate="Delete">Excluir</button> <!-- Botão de Excluir -->
+            <button class="delete-button" data-translate="Delete">Excluir</button> <!-- Delete button -->
             <input type="text" class="postit-title" id="postit-title-2" placeholder="Título do Post-it" value="Task 2" data-translate="Task">
+            <!-- Input field for the post-it title -->
             <textarea class="postit-content" id="postit-content-2" placeholder="Escreva sua nota aqui..." data-translate="Content"></textarea>
+            <!-- Textarea for the post-it content -->
             <input type="url" class="postit-link" id="postit-link-2" placeholder="Adicionar link (opcional)" data-translate="Link">
+            <!-- Input field for an optional link -->
             <input type="file" class="postit-file" id="postit-file-2">
+            <!-- File input field -->
             <button class="save-button" id="save-button-2" data-translate="Save">Salvar</button>
+            <!-- Save button -->
         </div>
+
         <div class="postit" id="postit-3">
-            <button class="delete-button" data-translate="Delete">Excluir</button> <!-- Botão de Excluir -->
+            <button class="delete-button" data-translate="Delete">Excluir</button> <!-- Delete button -->
             <input type="text" class="postit-title" id="postit-title-3" placeholder="Título do Post-it" value="Task 3" data-translate="Task">
+            <!-- Input field for the post-it title -->
             <textarea class="postit-content" id="postit-content-3" placeholder="Escreva sua nota aqui..." data-translate="Content"></textarea>
+            <!-- Textarea for the post-it content -->
             <input type="url" class="postit-link" id="postit-link-3" placeholder="Adicionar link (opcional)" data-translate="Link">
+            <!-- Input field for an optional link -->
             <input type="file" class="postit-file" id="postit-file-3">
+            <!-- File input field -->
             <button class="save-button" id="save-button-3" data-translate="Save">Salvar</button>
+            <!-- Save button -->
         </div>
 
-    <!-- Overlay (para post-it expandido) -->
+    </div>
+
+    <!-- Overlay (for expanded post-it) -->
     <div class="overlay" id="overlay" data-translate="Overlay"></div>
+    <!-- Overlay for when a post-it is expanded to provide focus -->
 
-    <!-- Dropdown para seleção de idioma -->
+    <!-- Language selection dropdown -->
     <select class="language-dropdown" id="language-dropdown" data-translate="Select Language">
-        <option value="en">English</option>
-        <option value="pt">Português</option>
-        <option value="es">Español</option>
+        <option value="en">English</option> <!-- English option -->
+        <option value="pt">Português</option> <!-- Portuguese option -->
+        <option value="es">Español</option> <!-- Spanish option -->
     </select>
+    <!-- Dropdown for selecting the language -->
 
-    <script src="script1.js"></script>
+    <script src="script1.js"></script> <!-- Link to the external JavaScript file for functionality -->
 </body>
 </html>
