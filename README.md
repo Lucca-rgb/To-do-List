@@ -1,4 +1,6 @@
-# To-do-List 📝
+# English Version
+
+## To-do-List 📝
 
 A simple and intuitive task management app designed to help you stay organized efficiently. This website allows you to create, edit, and delete tasks (represented as post-its) and supports three languages: English, Spanish, and Portuguese. Perfect for planning your day or organizing long-term goals! 🌍
 
@@ -72,11 +74,12 @@ If you have any questions or need more information, feel free to contact me:
 
 ---
 
-## [Versão em Português 🌍](#portuguese-version)
+[#Versão em Português](#versão-em-português)
 
 ---
+# Versão em Português
 
-# To-do-List 📝
+## To-do-List 📝
 
 Um aplicativo de gerenciamento de tarefas simples e intuitivo, desenvolvido para ajudar você a se organizar de maneira eficiente. Este site permite criar, editar e excluir tarefas (representadas como post-its), e oferece suporte a três idiomas: Inglês, Espanhol e Português. Perfeito para planejar o seu dia ou organizar metas a longo prazo! 🌍
 
@@ -147,3 +150,5 @@ Se você tiver alguma dúvida ou precisar de mais informações, entre em contat
 
 - **Email**: Lucca.torrez1980@Outlook.com
 - **GitHub**: [https://github.com/Lucca-rgb](https://github.com/Lucca-rgb)
+
+ [#English Version](#english-version)
