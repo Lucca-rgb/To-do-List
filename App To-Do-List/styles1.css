@@ -1,289 +1,287 @@
-/* Resetando margens e paddings para consistência */
+/* Resetting margins and paddings for consistency across all elements */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures that padding and borders are included in the element's total width and height */
 }
 
-/* Corpo da página */
+/* Body of the page */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(45deg, #32CD32, #1E90FF, #8A2BE2); /* Gradiente de verde, azul e roxo */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    padding: 20px;
-    position: relative;
+    font-family: Arial, sans-serif; /* Setting the font to Arial, sans-serif */
+    background: linear-gradient(45deg, #32CD32, #1E90FF, #8A2BE2); /* Green, blue, and purple gradient background */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    justify-content: flex-start; /* Align items at the top of the page */
+    min-height: 100vh; /* Minimum height of the body to cover the full viewport height */
+    padding: 20px; /* Padding around the body */
+    position: relative; /* Position relative for elements inside to be positioned absolutely */
 }
 
-/* Cabeçalho */
+/* Header styling */
 .header {
-    width: 100%;
-    height: 80px;
-    background-image: url('tarefas-diarias.png'); /* Imagem de fundo */
-    background-repeat: repeat;
-    background-size: 40px 40px, 60px 60px, 20px 20px; /* Tamanhos diferentes para criar variação */
-    background-position: 10px 10px, 60px 20px, 120px 5px; /* Posições aleatórias */
-    background-color: linear-gradient(45deg, #32CD32, #1E90FF, #8A2BE2); /* Gradiente de cor de fundo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil no cabeçalho */
+    width: 100%; /* Full width of the page */
+    height: 80px; /* Set a fixed height for the header */
+    background-image: url('tarefas-diarias.png'); /* Set background image */
+    background-repeat: repeat; /* Repeat the image */
+    background-size: 40px 40px, 60px 60px, 20px 20px; /* Different image sizes to create variation */
+    background-position: 10px 10px, 60px 20px, 120px 5px; /* Random positions for background images */
+    background-color: linear-gradient(45deg, #32CD32, #1E90FF, #8A2BE2); /* Gradient background as fallback if the image fails */
+    display: flex; /* Flexbox layout for the header */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    position: relative; /* Position relative for any absolutely positioned elements inside */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow under the header */
 }
 
-/* Título dentro do cabeçalho */
+/* Header title styling */
 .header h1 {
-    font-size: 2.5rem;
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: 2px;
+    font-size: 2.5rem; /* Larger font size for the title */
+    color: #fff; /* White text color */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center-align the text */
+    letter-spacing: 2px; /* Slightly increase letter spacing */
 }
 
-/* Estilo do botão de voltar */
+/* Back button style */
 .back-button {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+    position: absolute; /* Position the button absolutely */
+    left: 20px; /* Place the button 20px from the left */
+    top: 20px; /* Place the button 20px from the top */
+    background-color: #4CAF50; /* Green background for the button */
+    color: white; /* White text color */
+    padding: 10px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Change cursor to pointer when hovering */
+    font-size: 1rem; /* Set font size */
+    transition: background-color 0.3s; /* Smooth transition on hover */
 }
 
 .back-button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker green background when hovered */
 }
 
-/* Estilo para o botão de excluir */
+/* Delete button style */
 .delete-button {
-    background-color: #f44336;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 0.8rem;
+    background-color: #f44336; /* Red background for the delete button */
+    color: white; /* White text */
+    padding: 5px 10px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: absolute; /* Absolutely position the button */
+    top: 10px; /* Place the button 10px from the top */
+    right: 10px; /* Place the button 10px from the right */
+    font-size: 0.8rem; /* Smaller font size */
 }
 
 .delete-button:hover {
-    background-color: #d32f2f;
+    background-color: #d32f2f; /* Darker red background when hovered */
 }
 
-/* Estilo para os post-its */
+/* Container for post-its */
 .postit-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 20px;
-    max-height: 70vh;
-    overflow-y: auto;
-    width: 100%;
+    display: flex; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    gap: 20px; /* Space between items */
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align items to the top */
+    margin-top: 20px; /* Add space above */
+    max-height: 70vh; /* Limit maximum height to 70% of viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 100%; /* Full width */
 }
 
-/* Estilo do post-it */
+/* Styling for individual post-its */
 .postit {
-    width: 220px; /* Um pouco maior que o tamanho original */
-    height: auto;
-    min-height: 150px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    font-size: 1rem;
-    color: #333;
-    font-weight: 500;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    background-color: #f5f5f5;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    position: relative;
+    width: 220px; /* Slightly larger than the default size */
+    height: auto; /* Allow height to adjust based on content */
+    min-height: 150px; /* Minimum height of 150px */
+    border-radius: 10px; /* Rounded corners */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack content vertically */
+    padding: 15px; /* Padding inside the post-it */
+    font-size: 1rem; /* Set font size */
+    color: #333; /* Dark text color */
+    font-weight: 500; /* Medium font weight */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    cursor: pointer; /* Pointer cursor when hovering */
+    background-color: #f5f5f5; /* Light background color */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position relative for any absolute elements inside */
 }
 
-/* Efeito de expansão ao passar o mouse */
+/* Hover effect for post-its */
 .postit:hover {
-    transform: scale(1.05); /* Aumenta ligeiramente o tamanho */
-    background-color: #e0e0e0; /* Altera o fundo no hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+    transform: scale(1.05); /* Slightly enlarge post-it on hover */
+    background-color: #e0e0e0; /* Darker background on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
 }
 
-/* Efeito ao clicar no post-it */
+/* Active state when clicking a post-it */
 .postit:active {
-    transform: scale(1.1); /* Expande ainda mais ao clicar */
-    background-color: #d0d0d0; /* Fundo mais escuro no clique */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra no clique */
+    transform: scale(1.1); /* Increase size further on click */
+    background-color: #d0d0d0; /* Darker background color when clicked */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow when clicked */
 }
 
-/* Estilo para o overlay (quando o post-it expande) */
+/* Overlay styling when a post-it expands */
 .overlay {
-    position: fixed;
+    position: fixed; /* Fixed position to cover the entire screen */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* Coloca o overlay acima de todos os outros elementos */
-    display: none; /* Inicialmente não visível */
-    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 1000; /* Ensure it sits above all other elements */
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition on visibility */
 }
 
-/* Estilo para o post-it expandido */
+/* Expanded post-it styling */
 .postit.expanded {
-    position: fixed;
-    top: 50%; /* Centraliza na tela */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza corretamente */
-    width: 400px; /* Tamanho expandido */
-    height: 300px; /* Tamanho expandido */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra mais forte para destaque */
-    background-color: #e0e0e0; /* Cor de fundo mais escura quando expandido */
-    z-index: 1100; /* Fica acima do overlay */
-    transition: all 0.3s ease; /* Suaviza a transição */
+    position: fixed; /* Fixed position to center the post-it */
+    top: 50%; /* Vertically center */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Offset to center correctly */
+    width: 400px; /* Expanded width */
+    height: 300px; /* Expanded height */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+    background-color: #e0e0e0; /* Darker background color when expanded */
+    z-index: 1100; /* Above the overlay */
+    transition: all 0.3s ease; /* Smooth transition */
 }
 
-/* Campos de edição dentro do post-it */
+/* Input fields inside the post-it */
 .postit input[type="text"], .postit input[type="url"], .postit textarea {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    background-color: #fff;
-    resize: vertical;
+    width: 100%; /* Full width inputs */
+    margin: 10px 0; /* Margin around inputs */
+    padding: 10px; /* Padding inside the inputs */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    background-color: #fff; /* White background */
+    resize: vertical; /* Allow vertical resizing for textarea */
 }
 
-/* Estilo do botão salvar */
+/* Save button inside post-it */
 .postit .save-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-    align-self: flex-end;
+    background-color: #4CAF50; /* Green background for the save button */
+    color: white; /* White text */
+    padding: 10px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+    margin-top: 10px; /* Space above */
+    align-self: flex-end; /* Align button to the right */
 }
 
 .postit .save-button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker green background on hover */
 }
 
-/* Estilo para o campo de arquivos (se necessário) */
+/* File input field inside post-it */
 .postit input[type="file"] {
-    margin-top: 10px;
+    margin-top: 10px; /* Space above the file input */
 }
 
-/* Ajuste para o botão de adicionar post-it */
+/* Add post-it button styling */
 .add-postit-button {
-    font-size: 1.5rem; /* Tamanho maior */
-    padding: 10px 20px;
-    background-color: #ff6347; /* Cor diferente para destacá-lo */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-right: 10px; /* Distância da direita */
-    transition: background-color 0.3s ease;
-    display: flex;
-    align-items: center;
+    font-size: 1.5rem; /* Larger font size for the button */
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #ff6347; /* Tomato color background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 20px; /* Space above the button */
+    margin-right: 10px; /* Space from the right */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    display: flex; /* Use flex to align icon and text inside */
+    align-items: center; /* Center the button content */
 }
 
-/* Efeito de hover */
+/* Hover effect for add post-it button */
 .add-postit-button:hover {
-    background-color: #e55347; /* Cor de hover */
+    background-color: #e55347; /* Darker color on hover */
 }
 
-/* Estilo para o container que envolve o botão de adicionar post-it */
+/* Container for the add post-it button */
 .add-postit-container {
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    display: flex; /* Flexbox layout */
+    justify-content: flex-start; /* Align buttons to the left */
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow wrapping of buttons */
+    margin-top: 20px; /* Space above the container */
 }
 
-/* Estilo do dropdown de idiomas */
+/* Language dropdown styling */
 .language-dropdown {
-    position: fixed;
-    top: 45px;
-    right: 40px; /* Distância de 40px da direita */
-    background-color: #1E90FF; /* Azul */
-    color: #fff; /* Letras em branco */
-    border: none; /* Sem contorno */
-    border-radius: 4px;
-    font-size: 1rem;
-    padding: 5px 10px;
-    cursor: pointer;
+    position: fixed; /* Fixed position */
+    top: 45px; /* Place it 45px from the top */
+    right: 40px; /* Place it 40px from the right */
+    background-color: #1E90FF; /* Blue background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1rem; /* Set font size */
+    padding: 5px 10px; /* Padding inside the dropdown */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
-/* Estilo para as opções do dropdown */
+/* Dropdown options styling */
 .language-dropdown option {
-    padding: 5px;
-    background-color: #1E90FF; /* Azul */
-    color: #fff; /* Letras em branco */
+    padding: 5px; /* Padding for options */
+    background-color: #1E90FF; /* Blue background for options */
+    color: #fff; /* White text */
 }
 
-/* Scrollbar personalizada */
+/* Custom scrollbar styling */
 .scrollbar {
-    margin-top: 20px;
-    width: 100%;
-    height: 2px;
-    background-color: #aaa;
+    margin-top: 20px; /* Space above the scrollbar */
+    width: 100%; /* Full width */
+    height: 2px; /* Thin scrollbar */
+    background-color: #aaa; /* Light grey color */
 }
 
-/* Responsividade para tornar o layout flexível */
+/* Responsiveness adjustments for smaller screens */
 @media (max-width: 768px) {
     .header h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Smaller header text for medium screens */
     }
 
     .postit {
-        width: 180px; /* Tamanho mais ajustado para dispositivos menores */
-        font-size: 0.9rem;
+        width: 180px; /* Smaller post-it size for medium screens */
+        font-size: 0.9rem; /* Smaller text */
     }
 
     .postit.expanded {
-        width: 350px; /* Ajusta o tamanho expandido para telas menores */
-        height: 250px;
+        width: 350px; /* Adjust expanded size for medium screens */
+        height: 250px; /* Adjust expanded height */
     }
 
-    /* Ajuste para o botão de adicionar post-it */
-    .add-postit button {
-        font-size: 2.5rem; /* Aumenta um pouco o botão para telas médias */
+    .add-postit-button {
+        font-size: 2.5rem; /* Larger button for medium screens */
     }
 }
 
 @media (max-width: 480px) {
     .postit {
-        width: 150px;
-        font-size: 0.8rem;
+        width: 150px; /* Smaller post-it size for small screens */
+        font-size: 0.8rem; /* Even smaller font */
     }
 
     .postit.expanded {
-        width: 300px; /* Ajusta ainda mais para dispositivos pequenos */
-        height: 200px;
+        width: 300px; /* Adjust expanded size for small screens */
+        height: 200px; /* Adjust expanded height */
     }
 
-    /* Ajuste para o botão de adicionar post-it */
-    .add-postit button {
-        font-size: 2rem; /* Ajusta o tamanho do botão para telas pequenas */
-        width: 45px;
+    .add-postit-button {
+        font-size: 2rem; /* Smaller button for small screens */
+        width: 45px; /* Adjust button size */
         height: 45px;
     }
 }
