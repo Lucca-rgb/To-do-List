@@ -1,6 +1,4 @@
-## #[Versão em Português](#)
-
-## To-do-List 📝
+# To-do-List 📝
 
 A simple and intuitive task management app designed to help you stay organized efficiently. This website allows you to create, edit, and delete tasks (represented as post-its) and supports three languages: English, Spanish, and Portuguese. Perfect for planning your day or organizing long-term goals! 🌍
 
@@ -74,7 +72,9 @@ If you have any questions or need more information, feel free to contact me:
 
 ---
 
-## #English Version 🌍
+## [Versão em Português 🌍](#portuguese-version)
+
+---
 
 # To-do-List 📝
 
@@ -121,18 +121,16 @@ Um aplicativo de gerenciamento de tarefas simples e intuitivo, desenvolvido para
 Para rodar a To-do List localmente:
 
 1. Clone o repositório:
-    
-bash
+    ```bash
     git clone https://github.com/seuusuario/to-do-list.git
-
+    ```
 
 2. Acesse a pasta do projeto:
-    
-bash
+    ```bash
     cd to-do-list
+    ```
 
-
-3. Abra o arquivo index.html no seu navegador para visualizar o app.
+3. Abra o arquivo `index.html` no seu navegador para visualizar o app.
 
 ---
 
