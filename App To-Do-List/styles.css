@@ -1,102 +1,104 @@
-/* Resetando margens e paddings para consistência */
+/* Resetting margins and paddings for consistency across all elements */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures that padding and border are included in the element's total width and height */
 }
 
-/* Corpo da página */
+/* Body of the page */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, rgb(50, 168, 82), rgb(70, 130, 180), rgb(138, 43, 226)); /* Gradiente de verde, azul e roxo */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
+    font-family: Arial, sans-serif; /* Set a sans-serif font for the page */
+    background: linear-gradient(to right, rgb(50, 168, 82), rgb(70, 130, 180), rgb(138, 43, 226)); /* Green, blue, and purple gradient background */
+    display: flex; /* Use flexbox to layout child elements */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    height: 90vh; /* Set the height of the body to 90% of the viewport height */
 }
 
-/* Cabeçalho com imagem de fundo repetida e distribuída de forma aleatória */
+/* Header with a repeated background image, positioned randomly */
 .header {
-    width: 40%; /* Altere para 100% para ocupar a largura total */
+    width: 40%; /* Adjust width to 100% to make it take up the full width if needed */
     height: 80px;
     background-image:
-        url('tarefas-diarias.png'); /* Imagens de fundo repetidas */
-    background-repeat: repeat; /* As imagens se repetem */
-    background-size: 40px 40px, 60px 60px, 20px 20px; /* Tamanhos diferentes para criar variação */
-    background-position: 10px 10px, 60px 20px, 120px 5px; /* Posições aleatórias */
-    border-radius: 10px;
-    background-color: linear-gradient(to right, rgb(50, 168, 82), rgb(70, 130, 180), rgb(138, 43, 226)); /* Caso as imagens não carreguem */
+        url('tarefas-diarias.png'); /* Background image that will repeat */
+    background-repeat: repeat; /* Make the image repeat itself */
+    background-size: 40px 40px, 60px 60px, 20px 20px; /* Different sizes for the background images to create variation */
+    background-position: 10px 10px, 60px 20px, 120px 5px; /* Random positions for the background images */
+    border-radius: 10px; /* Round the corners of the header */
+    background-color: linear-gradient(to right, rgb(50, 168, 82), rgb(70, 130, 180), rgb(138, 43, 226)); /* Fallback gradient color if images don't load */
 }
 
+/* Header title style */
 .header h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Choose a different font family for the title */
     font-size: 30px;
-    text-decoration: inherit;
-    text-align: center;
-    color: #ffffff;
-    margin-top: 20px;
-    font-weight: 1000;
-    background-color: transparent; /* Fundo translúcido para o título */
-    background-size: 10px;
+    text-decoration: inherit; /* Inherit text decoration from parent */
+    text-align: center; /* Center the text */
+    color: #ffffff; /* Set the text color to white */
+    margin-top: 20px; /* Add space above the title */
+    font-weight: 1000; /* Make the font weight extra bold */
+    background-color: transparent; /* Make the background of the title transparent */
+    background-size: 10px; /* Set background size for better clarity (if necessary) */
 }
 
-/* Título */
+/* Main title styling */
 h1 {
-    font-size: 2rem;
-    color: #fff;
-    margin-top: 50px;
-    text-align: center;
+    font-size: 2rem; /* Set font size to 2rem for scaling */
+    color: #fff; /* Set text color to white */
+    margin-top: 50px; /* Add space above the title */
+    text-align: center; /* Center the title text */
 }
 
-/* Input */
+/* Style for the to-do input field */
 #todo-input {
-    padding: 10px;
-    border: 1px solid #fafafa;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    width: 50%;
-    max-width: 200px;
-    margin-top: 20px;
+    padding: 10px; /* Add padding inside the input */
+    border: 1px solid #fafafa; /* Light grey border around the input */
+    border-radius: 4px; /* Rounded corners for the input */
+    font-size: 1.2rem; /* Set font size to 1.2rem for better readability */
+    width: 50%; /* Set width to 50% of the parent container */
+    max-width: 200px; /* Limit the input's width to a maximum of 200px */
+    margin-top: 20px; /* Add space above the input */
 }
 
-/* Estilo do botão (quando o input é enviado) */
+/* Button style when the input is submitted */
 button {
-    padding: 10px 20px;
-    background-color: #3E4A89;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 20px;
+    padding: 10px 20px; /* Add padding inside the button */
+    background-color: #3E4A89; /* Set the button background to a blue color */
+    color: white; /* Set the text color to white */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Round the corners of the button */
+    cursor: pointer; /* Show a pointer cursor when hovering */
+    font-size: 1rem; /* Set font size to 1rem */
+    margin-top: 20px; /* Add space above the button */
 }
 
+/* Hover effect for the button */
 button:hover {
-    background-color: #2940b3;
+    background-color: #2940b3; /* Change the background color to a darker shade of blue when hovering */
 }
 
-/* Estilo para o dropdown de idiomas */
+/* Style for the language selection dropdown */
 .language-dropdown {
-    padding: 10px 20px;
-    background-color: #3E4A89; /* Cor igual ao botão */
-    color: white; /* Letras brancas */
-    border: none; /* Sem borda */
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 20px; /* Mesma margem que o botão */
-    transition: background-color 0.3s ease;
+    padding: 10px 20px; /* Add padding inside the dropdown */
+    background-color: #3E4A89; /* Set the background color to match the button */
+    color: white; /* Set the text color to white */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Round the corners of the dropdown */
+    cursor: pointer; /* Show a pointer cursor when hovering */
+    font-size: 1rem; /* Set the font size to 1rem */
+    margin-top: 20px; /* Add space above the dropdown */
+    transition: background-color 0.3s ease; /* Smooth transition for the background color on hover */
 }
 
-/* Efeito de hover no dropdown */
+/* Hover effect for the language dropdown */
 .language-dropdown:hover {
-    background-color: #2940b3; /* Mesma cor de hover do botão */
+    background-color: #2940b3; /* Change the background color when hovering, matching the button's hover effect */
 }
 
-/* Estilo das opções do dropdown */
+/* Style for the dropdown options */
 .language-dropdown option {
-    background-color: #3E4A89; /* Cor igual ao botão */
-    color: white; /* Letras brancas */
-    padding: 10px;
+    background-color: #3E4A89; /* Set the background color of the options to match the dropdown */
+    color: white; /* Set the text color to white */
+    padding: 10px; /* Add padding inside each dropdown option */
 }
