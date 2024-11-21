@@ -96,7 +96,7 @@ Um aplicativo de gerenciamento de tarefas simples e intuitivo, desenvolvido para
 
 ## Capturas de Tela 📸
 
-![image](https://github.com/user-attachments/assets/21e516d0-b70d-4ad7-bbda-4da20e2be0b3)  
+![image](https://github.com/user-attachments/assets/b98ab0d6-a317-4a82-8c99-a34947ba0af1)
 *Exemplo da interface da lista de tarefas*
 
 ---
