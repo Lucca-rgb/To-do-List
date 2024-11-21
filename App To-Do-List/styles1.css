@@ -1,0 +1,289 @@
+/* Resetando margens e paddings para consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #32CD32, #1E90FF, #8A2BE2); /* Gradiente de verde, azul e roxo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+/* Cabeçalho */
+.header {
+    width: 100%;
+    height: 80px;
+    background-image: url('tarefas-diarias.png'); /* Imagem de fundo */
+    background-repeat: repeat;
+    background-size: 40px 40px, 60px 60px, 20px 20px; /* Tamanhos diferentes para criar variação */
+    background-position: 10px 10px, 60px 20px, 120px 5px; /* Posições aleatórias */
+    background-color: linear-gradient(45deg, #32CD32, #1E90FF, #8A2BE2); /* Gradiente de cor de fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil no cabeçalho */
+}
+
+/* Título dentro do cabeçalho */
+.header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* Estilo do botão de voltar */
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para o botão de excluir */
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilo para os post-its */
+.postit-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+    width: 100%;
+}
+
+/* Estilo do post-it */
+.postit {
+    width: 220px; /* Um pouco maior que o tamanho original */
+    height: auto;
+    min-height: 150px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color: #f5f5f5;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Efeito de expansão ao passar o mouse */
+.postit:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho */
+    background-color: #e0e0e0; /* Altera o fundo no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+}
+
+/* Efeito ao clicar no post-it */
+.postit:active {
+    transform: scale(1.1); /* Expande ainda mais ao clicar */
+    background-color: #d0d0d0; /* Fundo mais escuro no clique */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra no clique */
+}
+
+/* Estilo para o overlay (quando o post-it expande) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Coloca o overlay acima de todos os outros elementos */
+    display: none; /* Inicialmente não visível */
+    transition: opacity 0.3s ease;
+}
+
+/* Estilo para o post-it expandido */
+.postit.expanded {
+    position: fixed;
+    top: 50%; /* Centraliza na tela */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza corretamente */
+    width: 400px; /* Tamanho expandido */
+    height: 300px; /* Tamanho expandido */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra mais forte para destaque */
+    background-color: #e0e0e0; /* Cor de fundo mais escura quando expandido */
+    z-index: 1100; /* Fica acima do overlay */
+    transition: all 0.3s ease; /* Suaviza a transição */
+}
+
+/* Campos de edição dentro do post-it */
+.postit input[type="text"], .postit input[type="url"], .postit textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+    resize: vertical;
+}
+
+/* Estilo do botão salvar */
+.postit .save-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    align-self: flex-end;
+}
+
+.postit .save-button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para o campo de arquivos (se necessário) */
+.postit input[type="file"] {
+    margin-top: 10px;
+}
+
+/* Ajuste para o botão de adicionar post-it */
+.add-postit-button {
+    font-size: 1.5rem; /* Tamanho maior */
+    padding: 10px 20px;
+    background-color: #ff6347; /* Cor diferente para destacá-lo */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 10px; /* Distância da direita */
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+/* Efeito de hover */
+.add-postit-button:hover {
+    background-color: #e55347; /* Cor de hover */
+}
+
+/* Estilo para o container que envolve o botão de adicionar post-it */
+.add-postit-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Estilo do dropdown de idiomas */
+.language-dropdown {
+    position: fixed;
+    top: 45px;
+    right: 40px; /* Distância de 40px da direita */
+    background-color: #1E90FF; /* Azul */
+    color: #fff; /* Letras em branco */
+    border: none; /* Sem contorno */
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Estilo para as opções do dropdown */
+.language-dropdown option {
+    padding: 5px;
+    background-color: #1E90FF; /* Azul */
+    color: #fff; /* Letras em branco */
+}
+
+/* Scrollbar personalizada */
+.scrollbar {
+    margin-top: 20px;
+    width: 100%;
+    height: 2px;
+    background-color: #aaa;
+}
+
+/* Responsividade para tornar o layout flexível */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .postit {
+        width: 180px; /* Tamanho mais ajustado para dispositivos menores */
+        font-size: 0.9rem;
+    }
+
+    .postit.expanded {
+        width: 350px; /* Ajusta o tamanho expandido para telas menores */
+        height: 250px;
+    }
+
+    /* Ajuste para o botão de adicionar post-it */
+    .add-postit button {
+        font-size: 2.5rem; /* Aumenta um pouco o botão para telas médias */
+    }
+}
+
+@media (max-width: 480px) {
+    .postit {
+        width: 150px;
+        font-size: 0.8rem;
+    }
+
+    .postit.expanded {
+        width: 300px; /* Ajusta ainda mais para dispositivos pequenos */
+        height: 200px;
+    }
+
+    /* Ajuste para o botão de adicionar post-it */
+    .add-postit button {
+        font-size: 2rem; /* Ajusta o tamanho do botão para telas pequenas */
+        width: 45px;
+        height: 45px;
+    }
+}
