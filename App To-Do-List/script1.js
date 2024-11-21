@@ -1,30 +1,30 @@
-// Selecionando os post-its e o overlay
+// Selecting the post-its and the overlay
 const postits = document.querySelectorAll('.postit');
 const overlay = document.createElement('div');
 overlay.classList.add('overlay');
 document.body.appendChild(overlay);
 
-// Criação do botão "Adicionar Post-it" ao lado dos post-its
+// Creating the "Add Post-it" button next to the post-its
 document.addEventListener('DOMContentLoaded', () => {
     const postItContainer = document.querySelector('.postit-container');
 
-    // Container para os post-its e o botão de adicionar
+    // Container for the post-its and the add button
     const addPostItContainer = document.createElement('div');
     addPostItContainer.classList.add('add-postit-container');
     postItContainer.parentNode.insertBefore(addPostItContainer, postItContainer);
 
-    // Criando o botão de adicionar post-it
+    // Creating the add post-it button
     const addButton = document.createElement('button');
     addButton.classList.add('add-postit-button');
-    addButton.setAttribute('data-translate', 'Add Post-it'); // Adicionando o atributo de tradução
+    addButton.setAttribute('data-translate', 'Add Post-it'); // Adding translation attribute
     addButton.innerText = '+ Add Post-it';
     addButton.addEventListener('click', () => {
-        createPostIt({}); // Cria um post-it vazio ao clicar no botão
+        createPostIt({}); // Creates an empty post-it when the button is clicked
     });
 
     addPostItContainer.appendChild(addButton);
 
-    // Função de mudança de idioma
+    // Language change dropdown
     const languageDropdown = document.createElement('select');
     languageDropdown.classList.add('language-dropdown');
     languageDropdown.innerHTML = `
@@ -33,25 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
         <option value="es">Español</option>
     `;
 
-    // Adiciona o evento de troca de idioma
+    // Adding the language change event
     languageDropdown.addEventListener('change', (event) => {
         changeLanguage(event.target.value);
     });
 
-    // Adiciona o dropdown de idiomas ao body
+    // Add the language dropdown to the body
     document.body.appendChild(languageDropdown);
 
-    // Carregar os post-its salvos do localStorage ao iniciar a página
+    // Load saved post-its from localStorage when the page starts
     const savedPostIts = JSON.parse(localStorage.getItem('postits')) || [];
     savedPostIts.forEach(postItData => {
         createPostIt(postItData);
     });
 
-    // Definir o idioma inicial
-    changeLanguage('en');  // Aqui, altere conforme o idioma padrão desejado, por exemplo 'pt' para português.
+    // Set the initial language
+    changeLanguage('en');  // Here, change to the default language, e.g., 'pt' for Portuguese.
 });
 
-// Função para mudar o idioma
+// Function to change the language
 function changeLanguage(language) {
     const translations = {
         en: {
@@ -87,32 +87,32 @@ function changeLanguage(language) {
         },
     };
 
-    // Alterar os textos da página de acordo com o idioma selecionado
+    // Change the page texts according to the selected language
     const translateElements = document.querySelectorAll('[data-translate]');
     translateElements.forEach((element) => {
         const key = element.getAttribute('data-translate');
         const translation = translations[language][key];
         if (element.tagName === 'BUTTON' || element.tagName === 'TEXTAREA' || element.tagName === 'INPUT') {
             if (element.placeholder) {
-                element.placeholder = translation || element.placeholder; // Para placeholders
+                element.placeholder = translation || element.placeholder; // For placeholders
             } else if (element.value) {
-                element.value = translation || element.value; // Para valores de input
+                element.value = translation || element.value; // For input values
             } else {
-                element.innerText = translation || element.innerText; // Para texto normal
+                element.innerText = translation || element.innerText; // For normal text
             }
         } else {
-            element.innerText = translation || element.innerText; // Para outros elementos de texto
+            element.innerText = translation || element.innerText; // For other text elements
         }
     });
 
-    // Atualiza os post-its após a mudança de idioma
+    // Update the post-its after language change
     const postits = document.querySelectorAll('.postit');
     postits.forEach(postit => {
         updatePostItTranslation(postit, language);
     });
 }
 
-// Função para atualizar a tradução de um post-it
+// Function to update the translation of a post-it
 function updatePostItTranslation(postit, language) {
     const translations = {
         en: {
@@ -132,7 +132,7 @@ function updatePostItTranslation(postit, language) {
         },
     };
 
-    // Atualizar os placeholders dos campos dentro do post-it
+    // Update placeholders inside the post-it
     const title = postit.querySelector('.postit-title');
     const content = postit.querySelector('.postit-content');
     const link = postit.querySelector('.postit-link');
@@ -142,110 +142,110 @@ function updatePostItTranslation(postit, language) {
     if (link) link.placeholder = translations[language]['Add Link (optional)'];
 }
 
-// Ao carregar a página, setar as traduções para o idioma padrão (português)
+// Set translations to default language (Portuguese) when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     changeLanguage('en');
 });
 
-// Função para expandir ou fechar o post-it
+// Function to toggle (expand or collapse) the post-it
 function togglePostIt(postit) {
     const isExpanded = postit.classList.contains('expanded');
 
-    // Se o post-it já estiver expandido, volta ao tamanho original
+    // If the post-it is already expanded, return to original size
     if (isExpanded) {
         postit.classList.remove('expanded');
-        overlay.style.display = 'none'; // Oculta o overlay
+        overlay.style.display = 'none'; // Hide the overlay
     } else {
-        // Expande o post-it e exibe o overlay
+        // Expand the post-it and show the overlay
         postit.classList.add('expanded');
-        overlay.style.display = 'block'; // Exibe o overlay
+        overlay.style.display = 'block'; // Show the overlay
     }
 }
 
-// Função para salvar os dados do post-it no localStorage
+// Function to save the post-it data to localStorage
 function savePostIt(postit) {
     const titulo = postit.querySelector('.postit-title').value;
     const conteudo = postit.querySelector('.postit-content').value;
     const link = postit.querySelector('.postit-link').value;
-    const file = postit.querySelector('.postit-file').files[0]; // Obter arquivo (se houver)
+    const file = postit.querySelector('.postit-file').files[0]; // Get file (if any)
 
-    // Recuperar post-its salvos ou inicializar um novo array
+    // Retrieve saved post-its or initialize a new array
     const savedPostIts = JSON.parse(localStorage.getItem('postits')) || [];
     
-    // Atualizar ou adicionar o post-it ao array
-    const postItIndex = savedPostIts.findIndex(p => p.titulo === titulo); // Encontre o índice com o mesmo título (opcional)
+    // Update or add the post-it to the array
+    const postItIndex = savedPostIts.findIndex(p => p.titulo === titulo); // Find index with the same title (optional)
     if (postItIndex >= 0) {
         savedPostIts[postItIndex] = { titulo, conteudo, link, file: file ? file.name : null };
     } else {
         savedPostIts.push({ titulo, conteudo, link, file: file ? file.name : null });
     }
 
-    // Salvar de volta no localStorage
+    // Save back to localStorage
     localStorage.setItem('postits', JSON.stringify(savedPostIts));
 
-    alert(`Post-it salvo!\nTítulo: ${titulo}\nConteúdo: ${conteudo}\nLink: ${link}\nArquivo: ${file ? file.name : 'Nenhum arquivo'}`);
+    alert(`Post-it saved!\nTitle: ${titulo}\nContent: ${conteudo}\nLink: ${link}\nFile: ${file ? file.name : 'No file'}`);
 }
 
-// Função para criar um novo post-it com conteúdo editável
+// Function to create a new post-it with editable content
 function createPostIt({ titulo = '', conteudo = '', link = '', file = null }) {
     const postItContainer = document.querySelector('.postit-container');
     const novoPostIt = document.createElement('div');
     novoPostIt.classList.add('postit');
 
-    // Adicionando o conteúdo inicial ao post-it
+    // Adding initial content to the post-it
     novoPostIt.innerHTML = `
         <input type="text" class="postit-title" value="${titulo}" placeholder="Task">
         <textarea class="postit-content" placeholder="Write your note here...">${conteudo}</textarea>
         <input type="url" class="postit-link" placeholder="Add link (optional)" value="${link}">
         <input type="file" class="postit-file">
-        <button class="save-button" data-translate="Save">Salvar</button>
-        <button class="delete-button" data-translate="Delete">Excluir</button>
+        <button class="save-button" data-translate="Save">Save</button>
+        <button class="delete-button" data-translate="Delete">Delete</button>
     `;
 
-    // Adiciona o novo post-it ao container
+    // Add the new post-it to the container
     postItContainer.appendChild(novoPostIt);
 
-    // Evento para salvar os dados quando clicar no botão "Salvar"
+    // Event to save the data when clicking the "Save" button
     novoPostIt.querySelector('.save-button').addEventListener('click', (e) => {
-        e.stopPropagation(); // Impede o clique no botão de propagar e fechar o post-it
+        e.stopPropagation(); // Prevents the click from propagating and closing the post-it
         savePostIt(novoPostIt);
     });
 
-    // Evento para excluir o post-it
+    // Event to delete the post-it
     novoPostIt.querySelector('.delete-button').addEventListener('click', (e) => {
-        e.stopPropagation(); // Impede o clique no botão de propagar e fechar o post-it
-        novoPostIt.remove(); // Remove o post-it da página
-        removePostItFromLocalStorage(novoPostIt.querySelector('.postit-title').value); // Remove do localStorage
+        e.stopPropagation(); // Prevents the click from propagating and closing the post-it
+        novoPostIt.remove(); // Removes the post-it from the page
+        removePostItFromLocalStorage(novoPostIt.querySelector('.postit-title').value); // Removes from localStorage
     });
 
-    // Evento de clique para expandir ou recolher o post-it
+    // Event to expand or collapse the post-it when clicked
     novoPostIt.addEventListener('click', (e) => {
-        e.stopPropagation(); // Impede que o clique se propague para o overlay
+        e.stopPropagation(); // Prevents the click from propagating to the overlay
         togglePostIt(novoPostIt);
     });
 
-    // Atualiza as traduções do novo post-it após sua criação
+    // Updates the translations of the new post-it after creation
     changeLanguage(document.querySelector('.language-dropdown').value);
 }
 
-// Função para remover um post-it do localStorage
+// Function to remove a post-it from localStorage
 function removePostItFromLocalStorage(titulo) {
     const savedPostIts = JSON.parse(localStorage.getItem('postits')) || [];
-    const updatedPostIts = savedPostIts.filter(postIt => postIt.titulo !== titulo); // Filtra o post-it com o título dado
-    localStorage.setItem('postits', JSON.stringify(updatedPostIts)); // Atualiza o localStorage
+    const updatedPostIts = savedPostIts.filter(postIt => postIt.titulo !== titulo); // Filter out the post-it with the given title
+    localStorage.setItem('postits', JSON.stringify(updatedPostIts)); // Update localStorage
 }
 
-// Evento de clique no overlay para fechar qualquer post-it expandido
+// Event for clicking on the overlay to close any expanded post-it
 overlay.addEventListener('click', () => {
     const expandedPostit = document.querySelector('.postit.expanded');
     if (expandedPostit) {
         expandedPostit.classList.remove('expanded');
-        overlay.style.display = 'none'; // Oculta o overlay
+        overlay.style.display = 'none'; // Hide the overlay
     }
 });
 
-// Função para limpar o localStorage (opcional)
+// Function to clear localStorage (optional)
 function clearLocalStorage() {
     localStorage.removeItem('postits');
-    alert('Todos os post-its foram removidos.');
+    alert('All post-its have been removed.');
 }
