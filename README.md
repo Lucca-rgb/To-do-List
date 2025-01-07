@@ -1,6 +1,6 @@
 # English Version 
 
-## [#Versão em Português Aqui](#versão-em-português)
+## [Versão em Português Aqui](#versão-em-português)
 
 ## To-do-List 📝
 
@@ -77,7 +77,7 @@ If you have any questions or need more information, feel free to contact me:
 ---
 # Versão em Português
 
-## [#English Version Here](#english-version)
+## [English Version Here](#english-version)
 
 ## To-do-List 📝
 
