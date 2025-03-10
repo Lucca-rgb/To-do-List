@@ -2,7 +2,7 @@
 
 ## [Versão em Português Aqui](#versão-em-português)
 
-## To-do-List 
+## To-do-List 📝
 
 A simple and intuitive task management app designed to help you stay organized efficiently. This website allows you to create, edit, and delete tasks (represented as post-its) and supports three languages: English, Spanish, and Portuguese. Perfect for planning your day or organizing long-term goals! 🌍
 
